@@ -170,6 +170,7 @@ export default function ContactSection() {
             });
 
             const data = await res.json();
+            console.log("Web3Forms response:", data);
             if (data.success) {
                 setStatus("sent");
                 setForm({ name: "", email: "", service: "", message: "" });
@@ -177,6 +178,7 @@ export default function ContactSection() {
                 throw new Error(data.message || "Failed to send message");
             }
         } catch (err: unknown) {
+            console.error("Form error:", err);
             const message = err instanceof Error ? err.message : "Unexpected error during submission";
             setErrorMessage(message);
             setStatus("error");
