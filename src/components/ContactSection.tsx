@@ -154,7 +154,9 @@ export default function ContactSection() {
         try {
             // Using Web3Forms for static site compatibility
             const formData = new FormData();
-            formData.append("access_key", "735e2373-c151-4122-8615-2882103f7188"); // Public demo key or I'll ask user to get one
+            // IMPORTANT: Get your free key at https://web3forms.com and paste it below
+            const WEB3FORMS_KEY = "735e2373-c151-4122-8615-2882103f7188";
+            formData.append("access_key", WEB3FORMS_KEY);
             formData.append("name", form.name);
             formData.append("email", form.email);
             formData.append("service", form.service);
