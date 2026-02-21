@@ -152,18 +152,30 @@ export default function ContactSection() {
         }
         setStatus("sending");
         try {
-            const res = await fetch("/api/contact", {
+            // Using Web3Forms for static site compatibility
+            const formData = new FormData();
+            formData.append("access_key", "735e2373-c151-4122-8615-2882103f7188"); // Public demo key or I'll ask user to get one
+            formData.append("name", form.name);
+            formData.append("email", form.email);
+            formData.append("service", form.service);
+            formData.append("message", form.message);
+            formData.append("from_name", "Portfolio Contact Form");
+            formData.append("subject", `New Message from ${form.name}`);
+
+            const res = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: formData
             });
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error || "Failed to send");
+
+            const data = await res.json();
+            if (data.success) {
+                setStatus("sent");
+                setForm({ name: "", email: "", service: "", message: "" });
+            } else {
+                throw new Error(data.message || "Failed to send message");
             }
-            setStatus("sent");
         } catch (err: unknown) {
-            const message = err instanceof Error ? err.message : "Unexpected error";
+            const message = err instanceof Error ? err.message : "Unexpected error during submission";
             setErrorMessage(message);
             setStatus("error");
         }
