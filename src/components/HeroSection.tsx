@@ -173,27 +173,27 @@ export default function HeroSection() {
 
             {/* ── Main content ────────────────────────── */}
             <div
-                className="container"
+                className="container hero-container"
                 style={{
                     position: "relative",
                     zIndex: 2,
-                    padding: "130px 24px 80px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                 }}
             >
-                <div style={{
-                    display: "grid",
-                    gap: 60,
-                    width: "100%",
-                    alignItems: "center",
-                    gridTemplateColumns: typeof window !== 'undefined' && window.innerWidth >= 1024 ? "1.2fr 1fr" : "1fr",
-                    ...(typeof window !== 'undefined' && window.innerWidth >= 1024 ? { textAlign: "left" } : { textAlign: "center" })
-                }} className="hero-grid">
+                <div
+                    className="hero-grid"
+                    style={{
+                        display: "grid",
+                        gap: 60,
+                        width: "100%",
+                        alignItems: "center",
+                    }}
+                >
 
                     {/* Left Side: Content */}
-                    <div>
+                    <div className="hero-content">
                         {/* Available badge */}
                         <motion.div
                             initial={{ opacity: 0, y: -20, scale: 0.9 }}
@@ -241,6 +241,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.75, duration: 0.7 }}
+                            className="hero-typewriter"
                             style={{
                                 fontSize: "clamp(1.1rem, 2.5vw, 1.8rem)",
                                 fontWeight: 700,
@@ -248,7 +249,6 @@ export default function HeroSection() {
                                 height: "2.6rem",
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: typeof window !== 'undefined' && window.innerWidth >= 1024 ? "flex-start" : "center",
                                 gap: 10
                             }}
                         >
@@ -281,7 +281,8 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.05 }}
-                            style={{ display: "flex", gap: 16, justifyContent: "inherit", flexWrap: "wrap", marginBottom: 60 }}
+                            className="hero-ctas"
+                            style={{ display: "flex", gap: 16, justifyContent: "inherit", flexWrap: "wrap", marginBottom: 30 }}
                         >
                             <motion.button
                                 className="btn-primary"
@@ -310,6 +311,7 @@ export default function HeroSection() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
+                        className="hero-visual"
                         style={{ position: "relative", display: "flex", justifyContent: "center" }}
                     >
                         {/* Image Backdrop Glow */}
@@ -387,10 +389,12 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2 }}
+                    className="hero-stats"
                     style={{
-                        marginTop: 80,
-                        display: "inline-flex",
-                        gap: 0,
+                        marginTop: 60,
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.07)",
                         borderRadius: 16,
@@ -401,13 +405,13 @@ export default function HeroSection() {
                         <motion.div
                             key={i}
                             whileHover={{ background: "rgba(0,212,255,0.06)" }}
+                            className="stat-item"
                             style={{
                                 padding: "20px 32px",
                                 textAlign: "center",
                                 borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.07)" : "none",
                                 cursor: "default",
                                 transition: "background 0.2s",
-                                ...(typeof window !== 'undefined' && window.innerWidth < 640 ? { padding: "12px 16px" } : {})
                             }}
                         >
                             <div style={{
@@ -423,15 +427,78 @@ export default function HeroSection() {
                 </motion.div>
             </div>
 
-            {/* CSS Overrides for responsive grid */}
+            {/* CSS Overrides for responsive grid and layout */}
             <style>{`
-                @media (min-width: 1024px) {
-                    .hero-grid { grid-template-columns: 1.2fr 1fr !important; text-align: left !important; }
-                    .hero-grid > div:first-child { display: block !important; }
+                .hero-container {
+                    padding-top: 140px;
+                    padding-bottom: 80px;
+                    padding-left: 24px;
+                    padding-right: 24px;
                 }
+                .hero-grid { 
+                    grid-template-columns: 1.2fr 1fr;
+                    text-align: left;
+                }
+                .hero-typewriter {
+                    justify-content: flex-start;
+                }
+                .hero-ctas {
+                    justify-content: flex-start;
+                }
+
                 @media (max-width: 1023px) {
-                    .hero-grid { text-align: center !important; }
-                    .hero-grid > div:first-child { display: flex; flex-direction: column; align-items: center; }
+                    .hero-container {
+                        padding-top: 100px;
+                        padding-bottom: 60px;
+                    }
+                    .hero-grid { 
+                        grid-template-columns: 1fr;
+                        text-align: center;
+                        gap: 40px;
+                    }
+                    .hero-content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .hero-typewriter {
+                        justify-content: center;
+                    }
+                    .hero-ctas {
+                        justify-content: center;
+                    }
+                    .hero-visual {
+                        order: -1; 
+                        margin-bottom: 20px;
+                    }
+                    .hero-stats {
+                        width: 100%;
+                        margin-top: 40px !important;
+                    }
+                    .stat-item {
+                        flex: 1 1 45%;
+                        padding: 15px 10px !important;
+                        border-bottom: 1px solid rgba(255,255,255,0.07);
+                    }
+                    .stat-item:nth-child(even) {
+                        border-right: none !important;
+                    }
+                    .stat-item:nth-child(n+3) {
+                        border-bottom: none;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .hero-title {
+                        font-size: 2.5rem !important;
+                    }
+                    .hero-ctas {
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    .hero-ctas button {
+                        width: 100%;
+                    }
                 }
             `}</style>
 
