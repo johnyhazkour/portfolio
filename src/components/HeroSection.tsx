@@ -434,13 +434,19 @@ export default function HeroSection() {
                     padding-bottom: 80px;
                     padding-left: 24px;
                     padding-right: 24px;
+                    width: 100%;
                 }
                 .hero-grid { 
                     grid-template-columns: 1.2fr 1fr;
                     text-align: left;
+                    width: 100%;
+                }
+                .hero-content {
+                    width: 100%;
                 }
                 .hero-typewriter {
                     justify-content: flex-start;
+                    width: 100%;
                 }
                 .hero-ctas {
                     justify-content: flex-start;
@@ -450,11 +456,13 @@ export default function HeroSection() {
                     .hero-container {
                         padding-top: 100px;
                         padding-bottom: 60px;
+                        padding-left: 20px;
+                        padding-right: 20px;
                     }
                     .hero-grid { 
                         grid-template-columns: 1fr;
                         text-align: center;
-                        gap: 40px;
+                        gap: 32px;
                     }
                     .hero-content {
                         display: flex;
@@ -466,18 +474,22 @@ export default function HeroSection() {
                     }
                     .hero-ctas {
                         justify-content: center;
+                        gap: 12px;
                     }
                     .hero-visual {
                         order: -1; 
-                        margin-bottom: 20px;
+                        margin-bottom: 10px;
+                    }
+                    .hero-img-frame {
+                        width: min(280px, 75vw) !important;
                     }
                     .hero-stats {
                         width: 100%;
-                        margin-top: 40px !important;
+                        margin-top: 35px !important;
                     }
                     .stat-item {
                         flex: 1 1 45%;
-                        padding: 15px 10px !important;
+                        padding: 12px 8px !important;
                         border-bottom: 1px solid rgba(255,255,255,0.07);
                     }
                     .stat-item:nth-child(even) {
@@ -489,15 +501,38 @@ export default function HeroSection() {
                 }
 
                 @media (max-width: 480px) {
+                    .hero-container {
+                        padding-top: 85px;
+                    }
                     .hero-title {
-                        font-size: 2.5rem !important;
+                        font-size: clamp(1.8rem, 10vw, 2.5rem) !important;
+                        letter-spacing: -0.02em;
+                    }
+                    .hero-subtitle {
+                        font-size: 0.9rem !important;
+                        padding: 0 10px;
                     }
                     .hero-ctas {
                         flex-direction: column;
                         width: 100%;
+                        max-width: 300px;
                     }
                     .hero-ctas button {
                         width: 100%;
+                        padding: 12px !important;
+                    }
+                    .online-status {
+                        display: none !important;
+                    }
+                    .badge {
+                        font-size: 0.65rem !important;
+                        padding: 4px 10px !important;
+                    }
+                    .hero-typewriter {
+                        font-size: 1.1rem !important;
+                    }
+                    .typewriter-text {
+                        min-width: 140px !important;
                     }
                 }
             `}</style>

@@ -4,7 +4,6 @@ import { SectionHeader, Reveal, StaggerReveal } from "./AnimationUtils";
 
 const skills = [
     { label: "WordPress / Elementor", level: 98, color: "var(--accent-cyan)" },
-    { label: "React / Next.js", level: 92, color: "var(--accent-purple)" },
     { label: "Shopify E-Commerce", level: 95, color: "var(--accent-green)" },
     { label: "Meta Pixel & CAPI", level: 96, color: "var(--accent-pink)" },
     { label: "Security & Hack Recovery", level: 99, color: "var(--accent-gold)" },
