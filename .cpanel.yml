@@ -1,5 +1,13 @@
 ---
 deployment:
   tasks:
+    # 1. Set deploy destination
     - export DEPLOYPATH=/home/johnyhazkour/public_html
-    - /bin/cp -rf out/* $DEPLOYPATH
+    # 2. Install all npm dependencies
+    - /usr/local/bin/npm install --prefer-offline
+    # 3. Build the Next.js static export (outputs to /out folder)
+    - /usr/local/bin/npm run build
+    # 4. Clear existing files from public_html (preserve .htaccess & images)
+    - find $DEPLOYPATH -mindepth 1 ! -name '.htaccess' -delete
+    # 5. Copy the built static files into public_html
+    - cp -r out/. $DEPLOYPATH/
