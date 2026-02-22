@@ -39,7 +39,6 @@ const seoServices = [
         description: "The cutting edge of search. I optimize your content to appear in AI-generated answers from ChatGPT, Perplexity, and Gemini — ensuring your brand is the chosen reference.",
         process: [
             "AI citation analysis & source positioning",
-            "E-E-A-T enhancement & authority building",
             "Topical authority content clustering",
             "Machine-readable structured data strategy",
         ],

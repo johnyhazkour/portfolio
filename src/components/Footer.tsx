@@ -38,23 +38,6 @@ export default function Footer() {
                             <p style={{ color: "var(--text-secondary)", maxWidth: 320, lineHeight: 1.8, fontSize: "0.95rem" }}>
                                 Professional web developer & security expert. Fixing broken websites and building future-proof digital experiences since 2018.
                             </p>
-                            <div className="social-links" style={{ display: "flex", gap: 12, marginTop: 32 }}>
-                                {social.map((s, i) => (
-                                    <motion.div
-                                        key={i}
-                                        whileHover={{ scale: 1.15, background: "rgba(255,255,255,0.08)", borderColor: "var(--accent-cyan)" }}
-                                        style={{
-                                            width: 44, height: 44, borderRadius: 12,
-                                            background: "rgba(255,255,255,0.03)",
-                                            border: "1px solid var(--border)",
-                                            display: "flex", alignItems: "center", justifyContent: "center",
-                                            cursor: "pointer", transition: "all 0.2s"
-                                        }}
-                                    >
-                                        {s}
-                                    </motion.div>
-                                ))}
-                            </div>
                         </Reveal>
                     </div>
 
@@ -108,7 +91,7 @@ export default function Footer() {
                             flex: 1 1 100%;
                             width: 100%;
                         }
-                        .footer-logo-wrapper, .social-links {
+                        .footer-logo-wrapper {
                             justify-content: center;
                         }
                         .footer-brand p {
@@ -124,9 +107,6 @@ export default function Footer() {
                 }}>
                     <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }} suppressHydrationWarning>
                         © {currentYear} Johny Dev. All rights reserved.
-                    </p>
-                    <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
-                        Built with ❤️ using Next.js & Framer Motion
                     </p>
                 </div>
             </div>
