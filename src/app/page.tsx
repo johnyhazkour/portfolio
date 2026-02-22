@@ -8,6 +8,7 @@ import SEOSection from "@/components/SEOSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollProgressLine from "@/components/ScrollProgressLine";
+import SectionDivider from "@/components/SectionDivider";
 
 export default function Home() {
   return (
@@ -16,11 +17,17 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <SectionDivider height={80} />
         <TickerBanner />
+        <SectionDivider height={120} />
         <AboutSection />
+        <SectionDivider height={100} />
         <ServicesSection />
+        <SectionDivider height={100} />
         <PortfolioSection />
+        <SectionDivider height={100} />
         <SEOSection />
+        <SectionDivider height={100} />
         <ContactSection />
       </main>
       <Footer />
