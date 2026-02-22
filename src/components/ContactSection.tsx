@@ -17,9 +17,9 @@ const services = [
 ];
 
 const contacts = [
-    { icon: <Mail size={20} />, label: "Email", value: "johnyhazkour@gmail.com", href: "mailto:johnyhazkour@gmail.com", color: "#00d4ff" },
-    { icon: <MessageCircle size={20} />, label: "WhatsApp", value: "+961 71 234 567", href: "https://wa.me/96171234567", color: "#00ffaa" }, // Placeholder number, please update
-    { icon: <Linkedin size={20} />, label: "LinkedIn", value: "In/johny-hazkour", href: "https://www.linkedin.com/in/johny-hazkour-8b40921ab", color: "#7c3aed" },
+    { icon: <Mail size={20} />, label: "Email", value: "johnyhazkour@gmail.com", href: "mailto:johnyhazkour@gmail.com", color: "#ffffff" },
+    { icon: <MessageCircle size={20} />, label: "WhatsApp", value: "+961 71 234 567", href: "https://wa.me/96171234567", color: "#cccccc" },
+    { icon: <Linkedin size={20} />, label: "LinkedIn", value: "In/johny-hazkour", href: "https://www.linkedin.com/in/johny-hazkour-8b40921ab", color: "#aaaaaa" },
 ];
 
 type FieldName = "name" | "email" | "service" | "message";
@@ -55,7 +55,7 @@ function FloatingInput({
                     left: 16,
                     top: focused || filled ? 2 : 30,
                     fontSize: focused || filled ? "0.68rem" : "0.9rem",
-                    color: error ? "#f87171" : focused ? "var(--accent-cyan)" : "var(--text-muted)",
+                    color: error ? "#f87171" : focused ? "rgba(255,255,255,0.9)" : "var(--text-muted)",
                     fontWeight: 500,
                     pointerEvents: "none",
                     transition: "all 0.25s cubic-bezier(0.25,0.1,0.25,1)",
@@ -77,10 +77,10 @@ function FloatingInput({
                 style={{
                     width: "100%",
                     background: focused
-                        ? "rgba(0,212,255,0.04)"
+                        ? "rgba(255,255,255,0.04)"
                         : "rgba(255,255,255,0.025)",
                     border: "none",
-                    borderBottom: `2px solid ${error ? "#f87171" : focused ? "var(--accent-cyan)" : "rgba(255,255,255,0.12)"
+                    borderBottom: `2px solid ${error ? "#f87171" : focused ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.12)"
                         }`,
                     borderRadius: "12px 12px 0 0",
                     padding: "14px 16px 10px",
@@ -89,7 +89,7 @@ function FloatingInput({
                     fontSize: "0.95rem",
                     outline: "none",
                     transition: "all 0.25s ease",
-                    boxShadow: focused ? "0 4px 20px rgba(0,212,255,0.06)" : "none",
+                    boxShadow: focused ? "0 4px 20px rgba(255,255,255,0.04)" : "none",
                 }}
             />
             {/* Animated scan underline */}
@@ -103,7 +103,7 @@ function FloatingInput({
                         bottom: error ? undefined : 0,
                         left: 0, right: 0,
                         height: 2,
-                        background: "linear-gradient(90deg, transparent, var(--accent-cyan), transparent)",
+                        background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)",
                         transformOrigin: "50%",
                     }}
                 />
@@ -189,20 +189,20 @@ export default function ContactSection() {
         <section id="contact" style={{ padding: "120px 0", background: "var(--bg-secondary)", position: "relative", overflowX: "hidden" }}>
             {/* Background orbs */}
             <motion.div
-                animate={{ opacity: [0.05, 0.1, 0.05] }}
+                animate={{ opacity: [0.03, 0.07, 0.03] }}
                 transition={{ duration: 6, repeat: Infinity }}
                 style={{
                     position: "absolute", top: "15%", left: "-8%", width: 500, height: 500,
-                    background: "radial-gradient(circle, rgba(0,212,255,1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(255,255,255,1) 0%, transparent 70%)",
                     borderRadius: "50%", filter: "blur(80px)", zIndex: 0,
                 }}
             />
             <motion.div
-                animate={{ opacity: [0.04, 0.09, 0.04] }}
+                animate={{ opacity: [0.02, 0.05, 0.02] }}
                 transition={{ duration: 8, repeat: Infinity, delay: 2 }}
                 style={{
                     position: "absolute", bottom: "10%", right: "-5%", width: 450, height: 450,
-                    background: "radial-gradient(circle, rgba(124,58,237,1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(255,255,255,1) 0%, transparent 70%)",
                     borderRadius: "50%", filter: "blur(80px)", zIndex: 0,
                 }}
             />

@@ -16,9 +16,9 @@ function FloatingBadge({ style, children, delay = 0, className = "" }: { style?:
             className={className}
             style={{
                 position: "absolute",
-                background: "rgba(5,5,16,0.85)",
+                background: "rgba(10,10,10,0.85)",
                 backdropFilter: "blur(20px)",
-                border: "1px solid rgba(0,212,255,0.2)",
+                border: "1px solid rgba(255,255,255,0.12)",
                 borderRadius: 14,
                 padding: "10px 18px",
                 fontSize: "0.8rem",
@@ -27,7 +27,7 @@ function FloatingBadge({ style, children, delay = 0, className = "" }: { style?:
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.08)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05)",
                 zIndex: 3,
                 ...style,
             }}
@@ -117,32 +117,32 @@ export default function HeroSection() {
             {/* ── Parallax orbs ─────────────────────── */}
             <motion.div style={{ x: orbX, y: orbY, position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
                 <motion.div
-                    animate={{ scale: [1, 1.15, 1], opacity: [0.12, 0.2, 0.12] }}
+                    animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.14, 0.08] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                     style={{
                         position: "absolute", top: "15%", left: "8%",
                         width: 500, height: 500, borderRadius: "50%",
-                        background: "radial-gradient(circle, rgba(124,58,237,0.22) 0%, transparent 70%)",
+                        background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)",
                         filter: "blur(60px)",
                     }}
                 />
                 <motion.div
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.18, 0.1] }}
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                     style={{
                         position: "absolute", bottom: "10%", right: "5%",
                         width: 600, height: 600, borderRadius: "50%",
-                        background: "radial-gradient(circle, rgba(0,212,255,0.16) 0%, transparent 70%)",
+                        background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)",
                         filter: "blur(70px)",
                     }}
                 />
                 <motion.div
-                    animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.14, 0.08] }}
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.04, 0.08, 0.04] }}
                     transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
                     style={{
                         position: "absolute", top: "40%", right: "20%",
                         width: 350, height: 350, borderRadius: "50%",
-                        background: "radial-gradient(circle, rgba(236,72,153,0.15) 0%, transparent 70%)",
+                        background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)",
                         filter: "blur(50px)",
                     }}
                 />
@@ -152,8 +152,8 @@ export default function HeroSection() {
             <div style={{
                 position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
                 backgroundImage: `
-          linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px)
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
         `,
                 backgroundSize: "60px 60px",
                 maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%)",
@@ -219,13 +219,13 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            style={{ color: "var(--accent-cyan)", fontFamily: "var(--font-code)", fontSize: "0.85rem", marginBottom: 20, letterSpacing: "0.12em" }}
+                            style={{ color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-code)", fontSize: "0.85rem", marginBottom: 20, letterSpacing: "0.12em" }}
                         >
                             <motion.span animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }}>&lt;</motion.span>
                             {" hello-world "}
                             <motion.span animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}>/&gt;</motion.span>
                             {" — I am "}
-                            <span style={{ color: "var(--accent-gold)" }}>Johny</span>
+                            <span style={{ color: "rgba(255,255,255,0.9)" }}>Johny</span>
                         </motion.p>
 
                         {/* Main headline */}
@@ -234,7 +234,7 @@ export default function HeroSection() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
                             className="hero-title"
-                            style={{ fontSize: "clamp(2.3rem, 6vw, 4.4rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 16, wordBreak: "break-word", maxWidth: "100%" }}
+                            style={{ fontSize: "clamp(2.3rem, 6vw, 4.4rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 16, wordBreak: "break-word", maxWidth: "100%", fontFamily: "var(--font-title)" }}
                         >
                             Your Digital{" "}
                             <span className="gradient-text">Problem Solver</span>
@@ -257,12 +257,12 @@ export default function HeroSection() {
                             }}
                         >
                             <span style={{ color: "var(--text-muted)", fontSize: "0.9em" }}>Expert</span>
-                            <span className="typewriter-text" style={{ color: "var(--accent-gold)", textShadow: "0 0 30px rgba(240,192,64,0.4)", minWidth: 200 }}>
+                            <span className="typewriter-text" style={{ color: "rgba(255,255,255,0.9)", textShadow: "0 0 30px rgba(255,255,255,0.2)", minWidth: 200 }}>
                                 {displayText}
                                 <motion.span
                                     animate={{ opacity: [1, 0] }}
                                     transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse" }}
-                                    style={{ display: "inline-block", width: 3, height: "1em", background: "var(--accent-gold)", marginLeft: 3, verticalAlign: "text-bottom", borderRadius: 2 }}
+                                    style={{ display: "inline-block", width: 3, height: "1em", background: "white", marginLeft: 3, verticalAlign: "text-bottom", borderRadius: 2 }}
                                 />
                             </span>
                         </motion.div>
@@ -275,10 +275,10 @@ export default function HeroSection() {
                             className="hero-subtitle"
                             style={{ color: "var(--text-secondary)", fontSize: "clamp(0.95rem, 1.8vw, 1.05rem)", maxWidth: 580, marginBottom: 44, lineHeight: 1.8 }}
                         >
-                            I build, fix, and supercharge websites — from recovering hacked sites & cleaning{" "}
-                            <span style={{ color: "var(--accent-cyan)" }}>Japanese keyword attacks</span>, to building premium{" "}
-                            <span style={{ color: "var(--accent-gold)" }}>Shopify stores</span> and implementing next-gen{" "}
-                            <span style={{ color: "#a78bfa" }}>AI-driven SEO</span> strategies.
+                            I build, fix, and supercharge websites — from recovering hacked sites &{" "}
+                            <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 600 }}>Japanese keyword attacks</span>, to building premium{" "}
+                            <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Shopify stores</span> and implementing next-gen{" "}
+                            <span style={{ color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>AI-driven SEO</span> strategies.
                         </motion.p>
 
                         {/* CTA buttons */}
@@ -322,7 +322,7 @@ export default function HeroSection() {
                         {/* Image Backdrop Glow */}
                         <div style={{
                             position: "absolute", inset: "-10%",
-                            background: "radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 60%)",
+                            background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)",
                             filter: "blur(40px)",
                             zIndex: -1
                         }} />
@@ -332,10 +332,10 @@ export default function HeroSection() {
                             position: "relative",
                             width: "min(400px, 85vw)",
                             aspectRatio: "1/1.2",
-                            background: "rgba(255,255,255,0.03)",
+                            background: "rgba(255,255,255,0.02)",
                             borderRadius: "40px",
                             padding: 10,
-                            border: "1px solid rgba(255,255,255,0.08)",
+                            border: "1px solid rgba(255,255,255,0.1)",
                             overflow: "hidden"
                         }}>
                             {/* Inner Border Glow */}
@@ -353,17 +353,16 @@ export default function HeroSection() {
                                 style={{ width: "100%", height: "100%", position: "relative" }}
                             >
                                 <img
-                                    src="/johny.png?v=2"
+                                    src="/johny.png?v=4"
                                     alt="Johny - Web Expert"
                                     style={{
                                         width: "100%",
                                         height: "100%",
                                         objectFit: "cover",
                                         borderRadius: "30px",
-                                        filter: "contrast(1.05) brightness(1.1)",
+                                        filter: "contrast(1.05) brightness(1.05)",
                                     }}
                                     onError={(e) => {
-                                        // Fallback if image not found
                                         const target = e.target as HTMLImageElement;
                                         target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80\u0026w=1000\u0026auto=format\u0026fit=crop";
                                     }}
@@ -376,13 +375,13 @@ export default function HeroSection() {
                                     className="online-status"
                                     style={{
                                         position: "absolute", bottom: "10%", right: "-10px",
-                                        background: "rgba(5,5,16,0.9)", backdropFilter: "blur(30px)",
-                                        border: "1px solid rgba(255,255,255,0.1)", borderRadius: "16px",
+                                        background: "rgba(10,10,10,0.92)", backdropFilter: "blur(30px)",
+                                        border: "1px solid rgba(255,255,255,0.12)", borderRadius: "16px",
                                         padding: "12px 20px", display: "flex", alignItems: "center", gap: 10,
-                                        boxShadow: "0 10px 30px rgba(0,0,0,0.5)"
+                                        boxShadow: "0 10px 30px rgba(0,0,0,0.7)"
                                     }}
                                 >
-                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--accent-green)", boxShadow: "0 0 10px var(--accent-green)" }} />
+                                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#aaffaa", boxShadow: "0 0 10px rgba(170,255,170,0.6)" }} />
                                     <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "white", whiteSpace: "nowrap" }}>Online Support</span>
                                 </motion.div>
                             </motion.div>
@@ -410,7 +409,7 @@ export default function HeroSection() {
                     {stats.map((stat, i) => (
                         <motion.div
                             key={i}
-                            whileHover={{ background: "rgba(0,212,255,0.06)" }}
+                            whileHover={{ background: "rgba(255,255,255,0.04)" }}
                             className="stat-item"
                             style={{
                                 padding: "20px 32px",
@@ -424,6 +423,7 @@ export default function HeroSection() {
                                 fontSize: "clamp(1.2rem, 3vw, 1.7rem)", fontWeight: 800,
                                 background: "var(--gradient-accent)",
                                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                                fontFamily: "var(--font-title)",
                             }}>
                                 {stat.value}
                             </div>
@@ -606,7 +606,7 @@ export default function HeroSection() {
                     <motion.div
                         animate={{ y: [0, 14, 0] }}
                         transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                        style={{ width: 4, height: 8, background: "var(--accent-cyan)", borderRadius: 2, boxShadow: "0 0 8px rgba(0,212,255,0.8)" }}
+                        style={{ width: 4, height: 8, background: "white", borderRadius: 2, boxShadow: "0 0 8px rgba(255,255,255,0.5)" }}
                     />
                 </motion.div>
             </motion.div>

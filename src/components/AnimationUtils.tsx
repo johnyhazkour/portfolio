@@ -133,7 +133,7 @@ export function LineReveal({
                     position: "absolute",
                     inset: 0,
                     background: color,
-                    boxShadow: `0 0 8px rgba(0,212,255,0.5)`,
+                    boxShadow: `0 0 8px rgba(255,255,255,0.3)`,
                 }}
             />
         </div>
@@ -160,7 +160,7 @@ export function SectionHeader({ badge, title, subtitle, badgeClass = "badge-cyan
                 </Reveal>
             )}
             <Reveal delay={0.1}>
-                <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, marginBottom: 16 }}>
+                <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, marginBottom: 16, fontFamily: "var(--font-title)" }}>
                     {title}
                 </h2>
             </Reveal>

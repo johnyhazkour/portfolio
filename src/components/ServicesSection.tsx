@@ -18,9 +18,9 @@ const services = [
             "Security hardening & firewall configuration",
             "Google Search Console re-submission",
         ],
-        color: "#f0c040",
-        gradient: "linear-gradient(135deg, rgba(240,192,64,0.1), rgba(224,123,32,0.05))",
-        borderColor: "rgba(240,192,64,0.2)",
+        color: "#ffffff",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+        borderColor: "rgba(255,255,255,0.15)",
     },
     {
         icon: "🛒",
@@ -36,9 +36,9 @@ const services = [
             "Speed & performance optimization",
             "Shopify SEO & structured data",
         ],
-        color: "#00d4ff",
-        gradient: "linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,212,255,0.02))",
-        borderColor: "rgba(0,212,255,0.2)",
+        color: "#dddddd",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))",
+        borderColor: "rgba(255,255,255,0.12)",
     },
     {
         icon: "📊",
@@ -53,9 +53,9 @@ const services = [
             "Server-side events (CAPI) integration",
             "Analytics & performance tracking",
         ],
-        color: "#7c3aed",
-        gradient: "linear-gradient(135deg, rgba(124,58,237,0.1), rgba(124,58,237,0.02))",
-        borderColor: "rgba(124,58,237,0.2)",
+        color: "#bbbbbb",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
+        borderColor: "rgba(255,255,255,0.1)",
     },
     {
         icon: "🌐",
@@ -70,9 +70,9 @@ const services = [
             "API integrations",
             "Website maintenance & updates",
         ],
-        color: "#00ffaa",
-        gradient: "linear-gradient(135deg, rgba(0,255,170,0.08), rgba(0,212,255,0.02))",
-        borderColor: "rgba(0,255,170,0.2)",
+        color: "#eeeeee",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))",
+        borderColor: "rgba(255,255,255,0.12)",
     },
     {
         icon: "🔍",
@@ -87,9 +87,9 @@ const services = [
             "SGE — Google AI Overviews readiness",
             "Schema markup & structured data",
         ],
-        color: "#ec4899",
-        gradient: "linear-gradient(135deg, rgba(236,72,153,0.1), rgba(124,58,237,0.05))",
-        borderColor: "rgba(236,72,153,0.2)",
+        color: "#cccccc",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
+        borderColor: "rgba(255,255,255,0.1)",
     },
     {
         icon: "⚡",
@@ -104,9 +104,9 @@ const services = [
             "Code minification & bundling",
             "Google PageSpeed to 90+ score",
         ],
-        color: "#00d4ff",
-        gradient: "linear-gradient(135deg, rgba(0,212,255,0.08), rgba(0,255,170,0.03))",
-        borderColor: "rgba(0,212,255,0.15)",
+        color: "#aaaaaa",
+        gradient: "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
+        borderColor: "rgba(255,255,255,0.08)",
     },
 ];
 
@@ -131,7 +131,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                 cursor: "default",
             }}
             onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 20px 60px ${service.color}20, 0 0 0 1px ${service.borderColor}`;
+                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 20px 60px rgba(255,255,255,0.05), 0 0 0 1px ${service.borderColor}`;
             }}
             onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
@@ -140,7 +140,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             {/* Glow top-right */}
             <div style={{
                 position: "absolute", top: 0, right: 0, width: 200, height: 200,
-                background: `radial-gradient(circle at top right, ${service.color}15, transparent 70%)`,
+                background: `radial-gradient(circle at top right, rgba(255,255,255,0.04), transparent 70%)`,
                 borderRadius: "0 20px 0 0",
             }} />
 
@@ -148,8 +148,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 24 }}>
                 <div style={{
                     width: 60, height: 60, borderRadius: 14,
-                    background: `${service.color}15`,
-                    border: `1px solid ${service.color}30`,
+                    background: `rgba(255,255,255,0.06)`,
+                    border: `1px solid rgba(255,255,255,0.12)`,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: "1.8rem",
                 }}>
@@ -159,7 +159,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             </div>
 
             {/* Title */}
-            <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: 12, color: "white" }}>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: 12, color: "white", fontFamily: "var(--font-title)" }}>
                 {service.title}
             </h3>
 
@@ -172,7 +172,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
                 {service.features.map((feat, i) => (
                     <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "var(--text-secondary)", fontSize: "0.85rem" }}>
-                        <span style={{ color: service.color, marginTop: 2, flexShrink: 0, fontSize: "0.7rem" }}>◆</span>
+                        <span style={{ color: "rgba(255,255,255,0.5)", marginTop: 2, flexShrink: 0, fontSize: "0.7rem" }}>◆</span>
                         {feat}
                     </li>
                 ))}

@@ -65,7 +65,7 @@ export default function Footer() {
                             {links.map((link) => (
                                 <li key={link.name}>
                                     <a href={link.href} style={{ color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", transition: "0.2s" }}
-                                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cyan)")}
+                                        onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
                                         onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}>
                                         {link.name}
                                     </a>

@@ -1,26 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #050510;
-  --bg-secondary: #07071a;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
-  --accent-cyan: #00d4ff;
-  --accent-purple: #7c3aed;
-  --accent-gold: #f0c040;
-  --accent-pink: #ec4899;
-  --accent-green: #00ffaa;
+  /* Black & white palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+
+  /* Accent: white / light grey */
+  --accent-cyan: #ffffff;
+  --accent-purple: #cccccc;
+  --accent-gold: #e0e0e0;
+  --accent-pink: #bbbbbb;
+  --accent-green: #aaaaaa;
+
+  /* Text */
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.62);
-  --text-muted: rgba(255, 255, 255, 0.32);
-  --border: rgba(255, 255, 255, 0.07);
-  --border-glow: rgba(0, 212, 255, 0.3);
-  --gradient-hero: radial-gradient(ellipse 100% 100% at 50% -10%, #0d1a3a 0%, #050510 60%);
-  --gradient-accent: linear-gradient(135deg, #00d4ff, #7c3aed);
-  --gradient-gold: linear-gradient(135deg, #f0c040, #e07b20);
-  --gradient-full: linear-gradient(90deg, #00d4ff, #7c3aed, #ec4899, #f0c040);
-  --font-main: 'Space Grotesk', sans-serif;
-  --font-code: 'Fira Code', monospace;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.35);
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(255, 255, 255, 0.2);
+
+  /* Gradients — now greyscale */
+  --gradient-hero: radial-gradient(ellipse 100% 100% at 50% -10%, #1a1a1a 0%, #0a0a0a 60%);
+  --gradient-accent: linear-gradient(135deg, #ffffff, #888888);
+  --gradient-gold: linear-gradient(135deg, #e0e0e0, #888888);
+  --gradient-full: linear-gradient(90deg, #ffffff, #aaaaaa, #555555, #ffffff);
+
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
+  --font-code: 'Poppins', monospace;
 }
 
 *,
@@ -46,8 +58,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Apply Montserrat to all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
 ::selection {
-  background: rgba(0, 212, 255, 0.28);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
 }
 
@@ -60,7 +82,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00d4ff, #7c3aed);
+  background: linear-gradient(180deg, #ffffff, #555555);
   border-radius: 2px;
 }
 
@@ -100,8 +122,8 @@ body {
 
 .glass-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(0, 212, 255, 0.25);
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.08), 0 24px 64px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05), 0 24px 64px rgba(0, 0, 0, 0.6);
   transform: translateY(-4px);
 }
 
@@ -124,36 +146,37 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid;
+  font-family: var(--font-main);
 }
 
 .badge-cyan {
-  background: rgba(0, 212, 255, 0.10);
-  border-color: rgba(0, 212, 255, 0.28);
-  color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 .badge-purple {
-  background: rgba(124, 58, 237, 0.10);
-  border-color: rgba(124, 58, 237, 0.28);
-  color: #a78bfa;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .badge-gold {
-  background: rgba(240, 192, 64, 0.10);
-  border-color: rgba(240, 192, 64, 0.28);
-  color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .badge-pink {
-  background: rgba(236, 72, 153, 0.10);
-  border-color: rgba(236, 72, 153, 0.28);
-  color: var(--accent-pink);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .badge-green {
-  background: rgba(0, 255, 170, 0.08);
-  border-color: rgba(0, 255, 170, 0.25);
-  color: var(--accent-green);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ── Buttons ───────────────────────────── */
@@ -170,8 +193,8 @@ body {
   font-weight: 600;
   cursor: pointer;
   border: none;
-  background: linear-gradient(135deg, #00d4ff, #7c3aed);
-  color: white;
+  background: #ffffff;
+  color: #000000;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   overflow: hidden;
   letter-spacing: 0.01em;
@@ -181,7 +204,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #7c3aed, #00d4ff);
+  background: rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -198,7 +221,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.35), 0 4px 16px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.25), 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:active {
@@ -218,16 +241,16 @@ body {
   cursor: pointer;
   background: transparent;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   letter-spacing: 0.01em;
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 212, 255, 0.08);
-  border-color: rgba(0, 212, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.08);
 }
 
 /* ── Keyframe animations ───────────────── */
@@ -352,16 +375,16 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.35;
+  opacity: 0.2;
 }
 
 /* ── Glow utilities ────────────────────── */
 .glow-cyan {
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .glow-purple {
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 /* ── Responsive ────────────────────────── */
@@ -415,7 +438,7 @@ body::before {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 12px;
+    padding: 0 14px;
   }
 
   /* Prevent long strings from breaking layout */

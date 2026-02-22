@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { SectionHeader, Reveal, StaggerReveal } from "./AnimationUtils";
 
 const skills = [
-    { label: "WordPress / Elementor", level: 98, color: "var(--accent-cyan)" },
-    { label: "Shopify E-Commerce", level: 95, color: "var(--accent-green)" },
-    { label: "Meta Pixel & CAPI", level: 96, color: "var(--accent-pink)" },
-    { label: "Security & Hack Recovery", level: 99, color: "var(--accent-gold)" },
-    { label: "SEO / AEO / GEO / SGE", level: 93, color: "var(--accent-cyan)" },
-    { label: "Japanese Keyword Hack Fix", level: 99, color: "var(--accent-gold)" },
-    { label: "Performance Optimization", level: 94, color: "var(--accent-purple)" },
+    { label: "WordPress / Elementor", level: 98, color: "#ffffff" },
+    { label: "Shopify E-Commerce", level: 95, color: "#cccccc" },
+    { label: "Meta Pixel & CAPI", level: 96, color: "#aaaaaa" },
+    { label: "Security & Hack Recovery", level: 99, color: "#ffffff" },
+    { label: "SEO / AEO / GEO / SGE", level: 93, color: "#dddddd" },
+    { label: "Japanese Keyword Hack Fix", level: 99, color: "#eeeeee" },
+    { label: "Performance Optimization", level: 94, color: "#bbbbbb" },
 ];
 
 const expertise = [
@@ -37,9 +37,9 @@ function SkillBar({ skill, index }: { skill: typeof skills[0]; index: number }) 
                         transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
                         style={{
                             height: "100%",
-                            background: skill.color,
+                            background: `linear-gradient(90deg, ${skill.color}, rgba(255,255,255,0.4))`,
                             borderRadius: 6,
-                            boxShadow: `0 0 15px ${skill.color}40`,
+                            boxShadow: `0 0 10px rgba(255,255,255,0.1)`,
                         }}
                     />
                 </Reveal>
@@ -74,7 +74,7 @@ export default function AboutSection() {
                                     background: "rgba(255,255,255,0.03)", padding: 6
                                 }}>
                                     <img
-                                        src="/johny.png?v=2"
+                                        src="/johny.png?v=4"
                                         alt="Johny"
                                         style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 18 }}
                                         onError={(e) => {
@@ -86,7 +86,7 @@ export default function AboutSection() {
                             </div>
 
                             <div>
-                                <h3 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: 20 }}>Johny — Your Digital Guardian</h3>
+                                <h3 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: 20, fontFamily: "var(--font-title)" }}>Johny — Your Digital Guardian</h3>
                                 <p style={{ color: "var(--text-secondary)", lineHeight: 1.9, marginBottom: 24, fontSize: "1.05rem" }}>
                                     I'm a full-stack web expert with a passion for solving the toughest digital problems. From rescuing websites that have been hacked and left for dead, to building high-converting Shopify stores from scratch.
                                 </p>

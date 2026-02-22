@@ -4,29 +4,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeader, Reveal, StaggerReveal } from "./AnimationUtils";
 
 const websites = [
-    { url: "https://totalfenceconcepts.com/", name: "Total Fence Concepts", category: "Business", color: "var(--accent-cyan)" },
-    { url: "https://larabaakliny.com/", name: "Lara Baakl Iny", category: "Personal", color: "var(--accent-pink)" },
-    { url: "https://orcaunion.com", name: "Orca Union", category: "Corporate", color: "var(--accent-purple)" },
-    { url: "https://www.adamsfood-kuwait.com/", name: "Adams Food Kuwait", category: "Food & Delivery", color: "var(--accent-gold)" },
-    { url: "https://labelsbyme.com/", name: "Labels By Me", category: "E-Commerce", color: "var(--accent-green)" },
-    { url: "https://fiduciary1st.com/", name: "Fiduciary 1st", category: "Finance", color: "var(--accent-cyan)" },
-    { url: "https://trypocketplan.com/", name: "Pocket Plan", category: "SaaS", color: "var(--accent-purple)" },
-    { url: "https://vetchat.live/", name: "VetChat Live", category: "Healthcare", color: "var(--accent-pink)" },
-    { url: "https://accelerator.pocketplan.io/", name: "Pocket Plan Accelerator", category: "SaaS", color: "var(--accent-gold)" },
-    { url: "https://yachtseagate.com/", name: "Yacht Sea Gate", category: "Luxury", color: "var(--accent-cyan)" },
-    { url: "https://mirnaelnar.com", name: "Mirna El Nar", category: "Personal", color: "var(--accent-pink)" },
-    { url: "https://sorbettilb.com/", name: "Sorbetti LB", category: "Food & Delivery", color: "var(--accent-gold)" },
-    { url: "https://roomgallery.com/", name: "Room Gallery", category: "Design", color: "var(--accent-purple)" },
-    { url: "https://antaakhi.org/", name: "Antaakhi", category: "Non-Profit", color: "var(--accent-green)" },
-    { url: "https://octometrix.com/", name: "Octometrix", category: "Tech", color: "var(--accent-cyan)" },
-    { url: "https://nakhoulcorp.com/", name: "Nakhoul Corp", category: "Corporate", color: "var(--accent-purple)" },
-    { url: "https://healthtechalley.org", name: "Health Tech Alley", category: "Healthcare", color: "var(--accent-green)" },
-    { url: "https://hubrenovationsnyc.com/", name: "Hub Renovations NYC", category: "Construction", color: "var(--accent-gold)" },
-    { url: "https://www.eyenetlb.com/", name: "Eyenet LB", category: "Optical", color: "var(--accent-cyan)" },
-    { url: "https://propertyprosuite.com/", name: "Property Pro Suite", category: "Real Estate", color: "var(--accent-purple)" },
-    { url: "https://emplus.me/", name: "EM Plus", category: "Personal", color: "var(--accent-pink)" },
-    { url: "https://zawajio.com/", name: "Zawajio", category: "Social", color: "var(--accent-gold)" },
-    { url: "https://pocketplan.io/", name: "Pocketplan.io", category: "SaaS", color: "var(--accent-cyan)" },
+    { url: "https://totalfenceconcepts.com/", name: "Total Fence Concepts", category: "Business", color: "#ffffff" },
+    { url: "https://larabaakliny.com/", name: "Lara Baakl Iny", category: "Personal", color: "#cccccc" },
+    { url: "https://orcaunion.com", name: "Orca Union", category: "Corporate", color: "#eeeeee" },
+    { url: "https://www.adamsfood-kuwait.com/", name: "Adams Food Kuwait", category: "Food & Delivery", color: "#dddddd" },
+    { url: "https://labelsbyme.com/", name: "Labels By Me", category: "E-Commerce", color: "#aaaaaa" },
+    { url: "https://fiduciary1st.com/", name: "Fiduciary 1st", category: "Finance", color: "#ffffff" },
+    { url: "https://trypocketplan.com/", name: "Pocket Plan", category: "SaaS", color: "#bbbbbb" },
+    { url: "https://vetchat.live/", name: "VetChat Live", category: "Healthcare", color: "#cccccc" },
+    { url: "https://accelerator.pocketplan.io/", name: "Pocket Plan Accelerator", category: "SaaS", color: "#eeeeee" },
+    { url: "https://yachtseagate.com/", name: "Yacht Sea Gate", category: "Luxury", color: "#ffffff" },
+    { url: "https://mirnaelnar.com", name: "Mirna El Nar", category: "Personal", color: "#dddddd" },
+    { url: "https://sorbettilb.com/", name: "Sorbetti LB", category: "Food & Delivery", color: "#aaaaaa" },
+    { url: "https://roomgallery.com/", name: "Room Gallery", category: "Design", color: "#cccccc" },
+    { url: "https://antaakhi.org/", name: "Antaakhi", category: "Non-Profit", color: "#bbbbbb" },
+    { url: "https://octometrix.com/", name: "Octometrix", category: "Tech", color: "#eeeeee" },
+    { url: "https://nakhoulcorp.com/", name: "Nakhoul Corp", category: "Corporate", color: "#ffffff" },
+    { url: "https://healthtechalley.org", name: "Health Tech Alley", category: "Healthcare", color: "#dddddd" },
+    { url: "https://hubrenovationsnyc.com/", name: "Hub Renovations NYC", category: "Construction", color: "#cccccc" },
+    { url: "https://www.eyenetlb.com/", name: "Eyenet LB", category: "Optical", color: "#ffffff" },
+    { url: "https://propertyprosuite.com/", name: "Property Pro Suite", category: "Real Estate", color: "#bbbbbb" },
+    { url: "https://emplus.me/", name: "EM Plus", category: "Personal", color: "#eeeeee" },
+    { url: "https://zawajio.com/", name: "Zawajio", category: "Social", color: "#aaaaaa" },
+    { url: "https://pocketplan.io/", name: "Pocketplan.io", category: "SaaS", color: "#ffffff" },
 ];
 
 const categories = ["All", "SaaS", "E-Commerce", "Business", "Healthcare", "Corporate"];
@@ -126,7 +126,7 @@ function WebsiteCard({ site }: { site: typeof websites[0] }) {
                             display: "flex", alignItems: "center", justifyContent: "center",
                             fontSize: "0.9rem", color: "white",
                             transition: "all 0.3s",
-                            ...(hovered ? { background: site.color, color: "black", transform: "rotate(45deg)" } : {})
+                            ...(hovered ? { background: "rgba(255,255,255,0.15)", color: "black", transform: "rotate(45deg)" } : {})
                         }}>
                             ↗
                         </div>

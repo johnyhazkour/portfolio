@@ -7,7 +7,7 @@ const seoServices = [
         acronym: "SEO",
         full: "Search Engine Optimization",
         icon: "🔍",
-        color: "var(--accent-cyan)",
+        color: "#ffffff",
         description: "The foundation of online visibility. I conduct deep technical audits, fix crawlability issues, and optimize on-page elements to ensure your site ranks for the right keywords.",
         process: [
             "Technical audit & Core Web Vitals optimization",
@@ -21,7 +21,7 @@ const seoServices = [
         acronym: "AEO",
         full: "Answer Engine Optimization",
         icon: "🤖",
-        color: "var(--accent-purple)",
+        color: "#cccccc",
         description: "AEO prepares your content to be the answer chosen by AI assistants like Google Assistant, Siri, Alexa, and ChatGPT. I structure your data to be cited by AI.",
         process: [
             "FAQ schema & Q&A content structuring",
@@ -35,7 +35,7 @@ const seoServices = [
         acronym: "GEO",
         full: "Generative Engine Optimization",
         icon: "🧠",
-        color: "var(--accent-pink)",
+        color: "#aaaaaa",
         description: "The cutting edge of search. I optimize your content to appear in AI-generated answers from ChatGPT, Perplexity, and Gemini — ensuring your brand is the chosen reference.",
         process: [
             "AI citation analysis & source positioning",
@@ -49,7 +49,7 @@ const seoServices = [
         acronym: "SGE",
         full: "Search Generative Experience",
         icon: "✨",
-        color: "var(--accent-gold)",
+        color: "#eeeeee",
         description: "Google's AI Overviews now dominate search results. I optimize your site to appear in these summaries, giving you prime real estate above all organic results.",
         process: [
             "AI Overview eligibility keyword audit",
@@ -135,11 +135,11 @@ export default function SEOSection() {
                 <Reveal delay={0.4}>
                     <div style={{
                         marginTop: 40, padding: "24px", borderRadius: 20,
-                        background: "rgba(0,212,255,0.04)", border: "1px solid rgba(0,212,255,0.15)",
+                        background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)",
                         textAlign: "center"
                     }}>
-                        <p style={{ color: "var(--accent-cyan)", margin: 0, fontSize: "0.9rem" }}>
-                            💡 <strong>AI-Driven Efficiency:</strong> I leverage LLMs like ChatGPT to perform high-speed data analysis and content mapping for maximum SEO yield.
+                        <p style={{ color: "rgba(255,255,255,0.7)", margin: 0, fontSize: "0.9rem" }}>
+                            💡 <strong style={{ color: "white" }}>AI-Driven Efficiency:</strong> I leverage LLMs like ChatGPT to perform high-speed data analysis and content mapping for maximum SEO yield.
                         </p>
                     </div>
                 </Reveal>

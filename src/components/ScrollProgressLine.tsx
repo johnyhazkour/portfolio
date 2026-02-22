@@ -28,9 +28,9 @@ export default function ScrollProgressLine() {
                     height: 3,
                     transformOrigin: "0%",
                     scaleX,
-                    background: "linear-gradient(90deg, #00d4ff, #7c3aed, #ec4899, #f0c040)",
+                    background: "linear-gradient(90deg, #ffffff, #888888, #ffffff)",
                     zIndex: 9998,
-                    boxShadow: "0 0 12px rgba(0,212,255,0.8), 0 0 24px rgba(124,58,237,0.4)",
+                    boxShadow: "0 0 12px rgba(255,255,255,0.4), 0 0 24px rgba(255,255,255,0.15)",
                 }}
             />
 
@@ -43,9 +43,9 @@ export default function ScrollProgressLine() {
                     width: 10,
                     height: 10,
                     borderRadius: "50%",
-                    background: "#00d4ff",
+                    background: "#ffffff",
                     zIndex: 9999,
-                    boxShadow: "0 0 10px 4px rgba(0,212,255,0.9)",
+                    boxShadow: "0 0 10px 4px rgba(255,255,255,0.5)",
                     x: `calc(${pct}% - 5px)`,
                     opacity: pct > 1 ? 1 : 0,
                 }}
@@ -64,22 +64,22 @@ export default function ScrollProgressLine() {
                     width: 44,
                     height: 44,
                     borderRadius: "50%",
-                    background: "rgba(5,5,16,0.95)",
-                    border: "2px solid rgba(0,212,255,0.5)",
+                    background: "rgba(10,10,10,0.95)",
+                    border: "2px solid rgba(255,255,255,0.25)",
                     backdropFilter: "blur(12px)",
                     zIndex: 9999,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 0 20px rgba(0,212,255,0.4)",
+                    boxShadow: "0 0 20px rgba(255,255,255,0.1)",
                     cursor: "pointer",
                     fontSize: "0.65rem",
                     fontWeight: 700,
-                    color: "#00d4ff",
+                    color: "white",
                     fontFamily: "var(--font-code)",
                 }}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                whileHover={{ scale: 1.1, boxShadow: "0 0 30px rgba(0,212,255,0.5)" }}
+                whileHover={{ scale: 1.1, boxShadow: "0 0 30px rgba(255,255,255,0.2)" }}
                 whileTap={{ scale: 0.9 }}
                 title="Back to top"
             >

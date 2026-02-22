@@ -13,9 +13,9 @@ export default function TickerBanner() {
     return (
         <div style={{
             overflow: "hidden",
-            background: "rgba(0,212,255,0.05)",
-            borderTop: "1px solid rgba(0,212,255,0.15)",
-            borderBottom: "1px solid rgba(0,212,255,0.15)",
+            background: "rgba(255,255,255,0.03)",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderBottom: "1px solid rgba(255,255,255,0.08)",
             padding: "14px 0",
             position: "relative",
         }}>
@@ -48,7 +48,7 @@ export default function TickerBanner() {
                         fontFamily: "var(--font-main)",
                         fontSize: "0.8rem",
                         fontWeight: 500,
-                        color: i % 3 === 0 ? "var(--accent-cyan)" : i % 3 === 1 ? "var(--text-secondary)" : "var(--accent-gold)",
+                        color: i % 3 === 0 ? "rgba(255,255,255,0.9)" : i % 3 === 1 ? "var(--text-muted)" : "rgba(255,255,255,0.7)",
                         whiteSpace: "nowrap",
                         gap: 8,
                     }}>

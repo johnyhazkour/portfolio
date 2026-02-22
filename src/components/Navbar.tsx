@@ -89,7 +89,7 @@ export default function Navbar() {
                 style={{
                     position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
                     padding: scrolled ? "12px 0" : "24px 0",
-                    background: scrolled ? "rgba(5, 5, 16, 0.85)" : "transparent",
+                    background: scrolled ? "rgba(10, 10, 10, 0.92)" : "transparent",
                     backdropFilter: scrolled ? "blur(20px)" : "none",
                     borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
                     transition: "padding 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.35s ease",
@@ -179,7 +179,7 @@ export default function Navbar() {
                         animate="open"
                         exit="closed"
                         style={{
-                            position: "fixed", inset: 0, background: "rgba(5,5,16,0.95)", zIndex: 999,
+                            position: "fixed", inset: 0, background: "rgba(8,8,8,0.97)", zIndex: 999,
                             backdropFilter: "blur(20px)",
                             display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10
                         }}
@@ -212,12 +212,12 @@ export default function Navbar() {
                         {/* Background Ornament for Mobile Menu */}
                         <div style={{
                             position: "absolute", bottom: "-10%", left: "-10%", width: "60%", height: "60%",
-                            background: "radial-gradient(circle, rgba(0,212,255,0.15) 0%, rgba(5,5,16,0) 70%)",
+                            background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(5,5,16,0) 70%)",
                             filter: "blur(60px)", pointerEvents: "none", zIndex: -1
                         }} />
                         <div style={{
                             position: "absolute", top: "-10%", right: "-10%", width: "60%", height: "60%",
-                            background: "radial-gradient(circle, rgba(124,58,237,0.15) 0%, rgba(5,5,16,0) 70%)",
+                            background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, rgba(5,5,16,0) 70%)",
                             filter: "blur(60px)", pointerEvents: "none", zIndex: -1
                         }} />
                     </motion.div>
@@ -228,7 +228,7 @@ export default function Navbar() {
                 .nav-link:hover { color: white !important; }
                 .nav-link .underline {
                     position: absolute; bottom: 4px; left: 16px; right: 16px;
-                    height: 1.5px; background: var(--gradient-accent);
+                    height: 1.5px; background: linear-gradient(90deg, white, rgba(255,255,255,0.4));
                     transform: scaleX(0); transform-origin: right;
                     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
                 }
@@ -241,7 +241,7 @@ export default function Navbar() {
                     transition: all 0.3s ease;
                 }
                 .mobile-link-text:hover {
-                    color: var(--accent-cyan);
+                    color: rgba(255,255,255,0.7);
                     transform: skewX(-5deg);
                 }
 
