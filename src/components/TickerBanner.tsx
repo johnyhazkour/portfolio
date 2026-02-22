@@ -20,13 +20,13 @@ export default function TickerBanner() {
             position: "relative",
         }}>
             {/* Fade edges */}
-            <div style={{
-                position: "absolute", left: 0, top: 0, bottom: 0, width: 120,
+            <div className="ticker-fade-left" style={{
+                position: "absolute", left: 0, top: 0, bottom: 0,
                 background: "linear-gradient(90deg, var(--bg-primary), transparent)",
                 zIndex: 2, pointerEvents: "none",
             }} />
-            <div style={{
-                position: "absolute", right: 0, top: 0, bottom: 0, width: 120,
+            <div className="ticker-fade-right" style={{
+                position: "absolute", right: 0, top: 0, bottom: 0,
                 background: "linear-gradient(270deg, var(--bg-primary), transparent)",
                 zIndex: 2, pointerEvents: "none",
             }} />
@@ -41,22 +41,35 @@ export default function TickerBanner() {
                 }}
             >
                 {doubled.map((item, i) => (
-                    <span key={i} style={{
+                    <span key={i} className="ticker-item" style={{
                         display: "inline-flex",
                         alignItems: "center",
-                        padding: "0 32px",
+                        padding: "0 24px",
                         fontFamily: "var(--font-main)",
-                        fontSize: "0.85rem",
+                        fontSize: "0.8rem",
                         fontWeight: 500,
                         color: i % 3 === 0 ? "var(--accent-cyan)" : i % 3 === 1 ? "var(--text-secondary)" : "var(--accent-gold)",
                         whiteSpace: "nowrap",
                         gap: 8,
                     }}>
                         {item}
-                        <span style={{ color: "rgba(255,255,255,0.1)", marginLeft: 32 }}>◆</span>
+                        <span style={{ color: "rgba(255,255,255,0.1)", marginLeft: 24 }}>◆</span>
                     </span>
                 ))}
             </motion.div>
+            <style>{`
+                .ticker-fade-left, .ticker-fade-right { width: 40px; }
+                @media (min-width: 768px) {
+                    .ticker-fade-left, .ticker-fade-right { width: 120px !important; }
+                    .ticker-item {
+                        padding: 0 32px !important;
+                        font-size: 0.85rem !important;
+                    }
+                    .ticker-item span {
+                        margin-left: 32px !important;
+                    }
+                }
+            `}</style>
         </div>
     );
 }

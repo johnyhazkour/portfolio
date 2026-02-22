@@ -12,12 +12,14 @@ export default function HeroParticles() {
         if (!ctx) return;
 
         let animId: number;
-        let W = (canvas.width = window.innerWidth);
-        let H = (canvas.height = window.innerHeight);
+        let W = canvas.offsetWidth;
+        let H = canvas.offsetHeight;
+        canvas.width = W;
+        canvas.height = H;
 
         const resize = () => {
-            W = canvas.width = window.innerWidth;
-            H = canvas.height = window.innerHeight;
+            W = canvas.width = canvas.offsetWidth;
+            H = canvas.height = canvas.offsetHeight;
         };
         window.addEventListener("resize", resize);
 
@@ -42,7 +44,11 @@ export default function HeroParticles() {
 
         // Mouse interaction
         let mouse = { x: W / 2, y: H / 2 };
-        const onMouse = (e: MouseEvent) => { mouse.x = e.clientX; mouse.y = e.clientY; };
+        const onMouse = (e: MouseEvent) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
         window.addEventListener("mousemove", onMouse);
 
         const draw = () => {
@@ -95,8 +101,10 @@ export default function HeroParticles() {
                 p.vy *= 0.98;
 
                 // Boundary bounce
-                if (p.x < 0 || p.x > W) p.vx *= -1;
-                if (p.y < 0 || p.y > H) p.vy *= -1;
+                if (p.x < 0) { p.x = 0; p.vx *= -1; }
+                if (p.x > W) { p.x = W; p.vx *= -1; }
+                if (p.y < 0) { p.y = 0; p.vy *= -1; }
+                if (p.y > H) { p.y = H; p.vy *= -1; }
 
                 const size = p.size * (1 + Math.sin(p.pulse) * 0.3);
                 ctx.beginPath();

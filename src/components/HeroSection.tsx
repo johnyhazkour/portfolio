@@ -7,12 +7,13 @@ import Logo from "./Logo";
 const roles = ["Web Expert", "Bug Fixer", "Shopify Pro", "SEO Specialist", "Security Expert", "Meta Integrator"];
 
 // Floating data-badge decoration
-function FloatingBadge({ style, children, delay = 0 }: { style?: React.CSSProperties; children: React.ReactNode; delay?: number }) {
+function FloatingBadge({ style, children, delay = 0, className = "" }: { style?: React.CSSProperties; children: React.ReactNode; delay?: number; className?: string }) {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.6, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay, duration: 0.6, type: "spring", stiffness: 160 }}
+            className={className}
             style={{
                 position: "absolute",
                 background: "rgba(5,5,16,0.85)",
@@ -97,6 +98,7 @@ export default function HeroSection() {
     return (
         <section
             id="hero"
+            className="hero-section"
             ref={heroRef}
             style={{
                 position: "relative",
@@ -158,16 +160,16 @@ export default function HeroSection() {
             }} />
 
             {/* ── Floating badges ─────────────────────── */}
-            <FloatingBadge style={{ top: "22%", left: "6%", display: "none" }} delay={1.2}>
+            <FloatingBadge className="hero-badge" style={{ top: "22%", left: "6%" }} delay={1.2}>
                 🛡️ Security Expert
             </FloatingBadge>
-            <FloatingBadge style={{ top: "28%", right: "6%", display: "none" }} delay={1.5}>
+            <FloatingBadge className="hero-badge" style={{ top: "28%", right: "6%" }} delay={1.5}>
                 🛒 Shopify Pro
             </FloatingBadge>
-            <FloatingBadge style={{ bottom: "25%", left: "8%", display: "none" }} delay={1.8}>
+            <FloatingBadge className="hero-badge" style={{ bottom: "25%", left: "8%" }} delay={1.8}>
                 🔍 SEO/AEO/GEO/SGE
             </FloatingBadge>
-            <FloatingBadge style={{ bottom: "20%", right: "7%", display: "none" }} delay={2.1}>
+            <FloatingBadge className="hero-badge" style={{ bottom: "20%", right: "7%" }} delay={2.1}>
                 📊 Meta Pixel API
             </FloatingBadge>
 
@@ -199,7 +201,8 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: -20, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ duration: 0.6 }}
-                            style={{ marginBottom: 32, display: "flex", justifyContent: "inherit" }}
+                            className="hero-badge-wrapper"
+                            style={{ marginBottom: 32, display: "flex" }}
                         >
                             <span className="badge badge-green" style={{ gap: 8 }}>
                                 <motion.span
@@ -207,7 +210,7 @@ export default function HeroSection() {
                                     transition={{ duration: 1.8, repeat: Infinity }}
                                     style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent-green)", display: "inline-block" }}
                                 />
-                                available_for_new_projects
+                                available for new projects
                             </span>
                         </motion.div>
 
@@ -230,7 +233,8 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-                            style={{ fontSize: "clamp(2.3rem, 6vw, 4.4rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 16 }}
+                            className="hero-title"
+                            style={{ fontSize: "clamp(2.3rem, 6vw, 4.4rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 16, wordBreak: "break-word", maxWidth: "100%" }}
                         >
                             Your Digital{" "}
                             <span className="gradient-text">Problem Solver</span>
@@ -253,7 +257,7 @@ export default function HeroSection() {
                             }}
                         >
                             <span style={{ color: "var(--text-muted)", fontSize: "0.9em" }}>Expert</span>
-                            <span style={{ color: "var(--accent-gold)", textShadow: "0 0 30px rgba(240,192,64,0.4)", minWidth: 200 }}>
+                            <span className="typewriter-text" style={{ color: "var(--accent-gold)", textShadow: "0 0 30px rgba(240,192,64,0.4)", minWidth: 200 }}>
                                 {displayText}
                                 <motion.span
                                     animate={{ opacity: [1, 0] }}
@@ -268,6 +272,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.9 }}
+                            className="hero-subtitle"
                             style={{ color: "var(--text-secondary)", fontSize: "clamp(0.95rem, 1.8vw, 1.05rem)", maxWidth: 580, marginBottom: 44, lineHeight: 1.8 }}
                         >
                             I build, fix, and supercharge websites — from recovering hacked sites & cleaning{" "}
@@ -282,7 +287,7 @@ export default function HeroSection() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1.05 }}
                             className="hero-ctas"
-                            style={{ display: "flex", gap: 16, justifyContent: "inherit", flexWrap: "wrap", marginBottom: 30 }}
+                            style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 30 }}
                         >
                             <motion.button
                                 className="btn-primary"
@@ -323,7 +328,7 @@ export default function HeroSection() {
                         }} />
 
                         {/* Main Image Frame */}
-                        <div style={{
+                        <div className="hero-img-frame" style={{
                             position: "relative",
                             width: "min(400px, 85vw)",
                             aspectRatio: "1/1.2",
@@ -368,6 +373,7 @@ export default function HeroSection() {
                                 <motion.div
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                    className="online-status"
                                     style={{
                                         position: "absolute", bottom: "10%", right: "-10px",
                                         background: "rgba(5,5,16,0.9)", backdropFilter: "blur(30px)",
@@ -429,6 +435,15 @@ export default function HeroSection() {
 
             {/* CSS Overrides for responsive grid and layout */}
             <style>{`
+                .hero-section {
+                    min-height: 100vh;
+                    min-height: 100dvh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
                 .hero-container {
                     padding-top: 140px;
                     padding-bottom: 80px;
@@ -444,30 +459,41 @@ export default function HeroSection() {
                 .hero-content {
                     width: 100%;
                 }
-                .hero-typewriter {
+                .hero-badge-wrapper {
                     justify-content: flex-start;
-                    width: 100%;
                 }
                 .hero-ctas {
                     justify-content: flex-start;
                 }
+                .hero-badge {
+                    display: none;
+                }
 
                 @media (max-width: 1023px) {
+                    .hero-section {
+                        min-height: 100dvh !important;
+                        padding-bottom: 40px;
+                        justify-content: center !important;
+                    }
                     .hero-container {
                         padding-top: 100px;
-                        padding-bottom: 60px;
+                        padding-bottom: 40px;
                         padding-left: 20px;
                         padding-right: 20px;
                     }
                     .hero-grid { 
                         grid-template-columns: 1fr;
                         text-align: center;
-                        gap: 32px;
+                        gap: 20px;
                     }
                     .hero-content {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                    }
+                    .hero-badge-wrapper {
+                        justify-content: center;
+                        margin-bottom: 20px !important;
                     }
                     .hero-typewriter {
                         justify-content: center;
@@ -478,14 +504,14 @@ export default function HeroSection() {
                     }
                     .hero-visual {
                         order: -1; 
-                        margin-bottom: 10px;
+                        margin-bottom: 5px;
                     }
                     .hero-img-frame {
-                        width: min(280px, 75vw) !important;
+                        width: min(240px, 70vw) !important;
                     }
                     .hero-stats {
                         width: 100%;
-                        margin-top: 35px !important;
+                        margin-top: 30px !important;
                     }
                     .stat-item {
                         flex: 1 1 45%;
@@ -502,37 +528,62 @@ export default function HeroSection() {
 
                 @media (max-width: 480px) {
                     .hero-container {
-                        padding-top: 85px;
+                        padding-top: 90px;
+                        padding-bottom: 30px;
+                        padding-left: 15px;
+                        padding-right: 15px;
                     }
                     .hero-title {
-                        font-size: clamp(1.8rem, 10vw, 2.5rem) !important;
+                        font-size: clamp(1.6rem, 11vw, 2.1rem) !important;
                         letter-spacing: -0.02em;
+                        margin-bottom: 12px !important;
+                        line-height: 1.2 !important;
+                        width: 100%;
                     }
                     .hero-subtitle {
-                        font-size: 0.9rem !important;
-                        padding: 0 10px;
+                        font-size: 0.85rem !important;
+                        padding: 0 5px;
+                        line-height: 1.5 !important;
+                        margin-bottom: 25px !important;
                     }
                     .hero-ctas {
                         flex-direction: column;
                         width: 100%;
-                        max-width: 300px;
+                        max-width: 280px;
+                        margin-bottom: 20px !important;
+                        gap: 12px !important;
                     }
                     .hero-ctas button {
                         width: 100%;
-                        padding: 12px !important;
+                        padding: 14px !important;
+                        font-size: 0.9rem !important;
                     }
                     .online-status {
-                        display: none !important;
+                        bottom: 5% !important;
+                        right: -5px !important;
+                        padding: 8px 14px !important;
+                    }
+                    .online-status span {
+                        font-size: 0.7rem !important;
                     }
                     .badge {
-                        font-size: 0.65rem !important;
+                        font-size: 0.62rem !important;
                         padding: 4px 10px !important;
+                        margin-bottom: 20px !important;
                     }
                     .hero-typewriter {
-                        font-size: 1.1rem !important;
+                        font-size: 0.95rem !important;
+                        margin-bottom: 20px !important;
+                        height: auto !important;
                     }
                     .typewriter-text {
-                        min-width: 140px !important;
+                        min-width: 120px !important;
+                    }
+                    .hero-stats {
+                        margin-top: 20px !important;
+                    }
+                    .scroll-indicator {
+                        display: none !important;
                     }
                 }
             `}</style>
@@ -542,6 +593,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.8 }}
+                className="scroll-indicator"
                 style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}
             >
                 <span style={{ color: "var(--text-muted)", fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>Scroll</span>
