@@ -6,4 +6,4 @@ deployment:
     - npm install
     - npm run build
     # Simpler copy command
-    - cp -R out/* $DEPLOYPATH
+    - cp -R out/* $DEPLOYPATH # Final deployment
