@@ -160,10 +160,10 @@ export default function HeroSection() {
             }} />
 
             {/* ── Floating badges ─────────────────────── */}
-            <FloatingBadge className="hero-badge" style={{ top: "22%", left: "6%" }} delay={1.2}>
+            <FloatingBadge className="hero-badge" style={{ top: "12%", left: "4%" }} delay={1.2}>
                 🛡️ Security Expert
             </FloatingBadge>
-            <FloatingBadge className="hero-badge" style={{ top: "28%", right: "6%" }} delay={1.5}>
+            <FloatingBadge className="hero-badge" style={{ top: "18%", right: "4%" }} delay={1.5}>
                 🛒 Shopify Pro
             </FloatingBadge>
             <FloatingBadge className="hero-badge" style={{ bottom: "25%", left: "8%" }} delay={1.8}>
