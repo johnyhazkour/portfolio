@@ -18,8 +18,8 @@ const services = [
 
 const contacts = [
     { icon: <Mail size={20} />, label: "Email", value: "johnyhazkour@gmail.com", href: "mailto:johnyhazkour@gmail.com", color: "#ffffff" },
-    { icon: <MessageCircle size={20} />, label: "WhatsApp", value: "+9613436684", href: "https://wa.me/9613436684", color: "#cccccc" },
-    { icon: <Linkedin size={20} />, label: "LinkedIn", value: "In/johny-hazkour", href: "https://www.linkedin.com/in/johny-hazkour-8b40921ab/", color: "#aaaaaa" },
+    { icon: <MessageCircle size={20} />, label: "WhatsApp", value: "+961 3 436 684", href: "https://wa.me/9613436684", color: "#cccccc" },
+    { icon: <Linkedin size={20} />, label: "LinkedIn", value: "Johny Hazkour (LinkedIn)", href: "https://www.linkedin.com/in/johny-hazkour-8b40921ab/", color: "#aaaaaa" },
 ];
 
 type FieldName = "name" | "email" | "service" | "message";
