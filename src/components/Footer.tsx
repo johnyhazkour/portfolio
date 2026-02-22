@@ -25,11 +25,11 @@ export default function Footer() {
             overflow: "hidden",
         }}>
             <div className="container">
-                <div className="footer-grid">
+                <div className="footer-flex">
                     {/* Brand */}
                     <div className="footer-brand">
                         <Reveal>
-                            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+                            <div className="footer-logo-wrapper" style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                                 <Logo size={36} animate={false} />
                                 <span style={{ fontSize: "1.2rem", fontWeight: 800 }}>
                                     Johny <span className="gradient-text">Dev</span>
@@ -86,27 +86,33 @@ export default function Footer() {
                 </div>
 
                 <style>{`
-                    .footer-grid {
-                        display: grid;
-                        grid-template-columns: 2fr 1fr 1fr;
+                    .footer-flex {
+                        display: flex;
+                        justify-content: space-between;
                         gap: 60px;
                         margin-bottom: 80px;
+                        flex-wrap: wrap;
                     }
-                    @media (max-width: 1024px) {
-                        .footer-grid {
-                            grid-template-columns: 1fr !important;
-                            gap: 48px !important;
-                            margin-bottom: 48px !important;
+                    .footer-brand { flex: 2 1 300px; }
+                    .footer-nav-col { flex: 1 1 150px; }
+                    .footer-contact-col { flex: 1 1 200px; }
+
+                    @media (max-width: 991px) {
+                        .footer-flex {
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                            gap: 40px;
                         }
                         .footer-brand, .footer-nav-col, .footer-contact-col {
-                            grid-column: span 1 !important;
-                            text-align: center !important;
+                            flex: 1 1 100%;
+                            width: 100%;
                         }
-                        .footer-brand div:first-child, .social-links {
-                            justify-content: center !important;
+                        .footer-logo-wrapper, .social-links {
+                            justify-content: center;
                         }
                         .footer-brand p {
-                            margin: 0 auto !important;
+                            margin: 0 auto;
                         }
                     }
                 `}</style>

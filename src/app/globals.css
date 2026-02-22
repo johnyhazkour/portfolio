@@ -439,9 +439,18 @@ body {
   max-width: 100%;
   overflow-x: hidden !important;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 main {
   width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
 }

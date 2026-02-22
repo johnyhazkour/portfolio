@@ -611,8 +611,15 @@ export default function HeroSection() {
                 </motion.div>
             </motion.div>
 
-            {/* Show floating badges on desktop */}
-            <style>{`@media (min-width: 1024px) { .hero-badge { display: flex !important; } }`}</style>
+            {/* Show floating badges on desktop only */}
+            <style>{`
+                @media (max-width: 1023px) {
+                    .hero-badge { display: none !important; }
+                }
+                @media (min-width: 1024px) { 
+                    .hero-badge { display: flex !important; } 
+                }
+            `}</style>
         </section>
     );
 }
