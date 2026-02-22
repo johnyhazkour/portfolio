@@ -183,7 +183,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function ServicesSection() {
     return (
-        <section id="services" style={{ padding: "120px 0", background: "var(--bg-secondary)" }}>
+        <section id="services" style={{ padding: "120px 0", background: "var(--bg-secondary)", overflowX: "hidden" }}>
             <div className="container">
                 <SectionHeader
                     badge="🚀 What I Do"

@@ -77,7 +77,7 @@ export default function Footer() {
                     {/* Contact */}
                     <div className="footer-contact-col">
                         <h4 style={{ fontSize: "0.9rem", color: "white", fontWeight: 700, marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.05em" }}>Let's Talk</h4>
-                        <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", lineHeight: 1.8 }}>
+                        <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", lineHeight: 1.8, wordBreak: "break-all" }}>
                             johnyhazkour@gmail.com<br />
                             Emergency Support 24/7<br />
                             Beirut, Lebanon

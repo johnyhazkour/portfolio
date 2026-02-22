@@ -186,7 +186,7 @@ export default function ContactSection() {
     };
 
     return (
-        <section id="contact" style={{ padding: "120px 0", background: "var(--bg-secondary)", position: "relative", overflow: "hidden" }}>
+        <section id="contact" style={{ padding: "120px 0", background: "var(--bg-secondary)", position: "relative", overflowX: "hidden" }}>
             {/* Background orbs */}
             <motion.div
                 animate={{ opacity: [0.05, 0.1, 0.05] }}

@@ -107,7 +107,7 @@ export default function HeroSection() {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                overflow: "hidden",
+                overflowX: "hidden",
                 background: "var(--gradient-hero)",
             }}
         >

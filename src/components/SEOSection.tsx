@@ -120,7 +120,7 @@ function SEOCard({ service, index }: { service: typeof seoServices[0]; index: nu
 
 export default function SEOSection() {
     return (
-        <section id="seo" style={{ padding: "120px 0", background: "var(--bg-secondary)" }}>
+        <section id="seo" style={{ padding: "120px 0", background: "var(--bg-secondary)", overflowX: "hidden" }}>
             <div className="container">
                 <SectionHeader
                     badge="🚀 AI-Search Strategy"

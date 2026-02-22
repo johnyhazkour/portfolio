@@ -145,7 +145,7 @@ export default function PortfolioSection() {
         : websites.filter(w => w.category === activeCat);
 
     return (
-        <section id="portfolio" style={{ padding: "120px 0" }}>
+        <section id="portfolio" style={{ padding: "120px 0", overflowX: "hidden" }}>
             <div className="container">
                 <SectionHeader
                     badge="💼 Portfolio"

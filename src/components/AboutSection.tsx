@@ -50,7 +50,7 @@ function SkillBar({ skill, index }: { skill: typeof skills[0]; index: number }) 
 
 export default function AboutSection() {
     return (
-        <section id="about" style={{ padding: "120px 0", position: "relative" }}>
+        <section id="about" style={{ padding: "120px 0", position: "relative", overflowX: "hidden" }}>
             <div className="container">
                 <SectionHeader
                     badge="👋 About Me"
