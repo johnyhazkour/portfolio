@@ -111,7 +111,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Expertise cards */}
-                <StaggerReveal staggerDelay={0.08} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+                <StaggerReveal staggerDelay={0.08} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: 20 }}>
                     {expertise.map((item, i) => (
                         <div key={i} className="glass-card" style={{ padding: "28px", display: "flex", flexDirection: "column", gap: 16 }}>
                             <div style={{ fontSize: "2.2rem" }}>{item.icon}</div>

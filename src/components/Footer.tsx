@@ -25,14 +25,9 @@ export default function Footer() {
             overflow: "hidden",
         }}>
             <div className="container">
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                    gap: 60,
-                    marginBottom: 80,
-                }}>
+                <div className="footer-grid">
                     {/* Brand */}
-                    <div style={{ gridColumn: "span 2" }}>
+                    <div className="footer-brand">
                         <Reveal>
                             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                                 <Logo size={36} animate={false} />
@@ -43,7 +38,7 @@ export default function Footer() {
                             <p style={{ color: "var(--text-secondary)", maxWidth: 320, lineHeight: 1.8, fontSize: "0.95rem" }}>
                                 Professional web developer & security expert. Fixing broken websites and building future-proof digital experiences since 2018.
                             </p>
-                            <div style={{ display: "flex", gap: 12, marginTop: 32 }}>
+                            <div className="social-links" style={{ display: "flex", gap: 12, marginTop: 32 }}>
                                 {social.map((s, i) => (
                                     <motion.div
                                         key={i}
@@ -64,7 +59,7 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
+                    <div className="footer-nav-col">
                         <h4 style={{ fontSize: "0.9rem", color: "white", fontWeight: 700, marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.05em" }}>Navigation</h4>
                         <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 14 }}>
                             {links.map((link) => (
@@ -80,7 +75,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div>
+                    <div className="footer-contact-col">
                         <h4 style={{ fontSize: "0.9rem", color: "white", fontWeight: 700, marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.05em" }}>Let's Talk</h4>
                         <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", lineHeight: 1.8 }}>
                             johnyhazkour@gmail.com<br />
@@ -89,6 +84,32 @@ export default function Footer() {
                         </p>
                     </div>
                 </div>
+
+                <style>{`
+                    .footer-grid {
+                        display: grid;
+                        grid-template-columns: 2fr 1fr 1fr;
+                        gap: 60px;
+                        margin-bottom: 80px;
+                    }
+                    @media (max-width: 1024px) {
+                        .footer-grid {
+                            grid-template-columns: 1fr !important;
+                            gap: 48px !important;
+                            margin-bottom: 48px !important;
+                        }
+                        .footer-brand, .footer-nav-col, .footer-contact-col {
+                            grid-column: span 1 !important;
+                            text-align: center !important;
+                        }
+                        .footer-brand div:first-child, .social-links {
+                            justify-content: center !important;
+                        }
+                        .footer-brand p {
+                            margin: 0 auto !important;
+                        }
+                    }
+                `}</style>
 
                 {/* Bottom Bar */}
                 <div style={{

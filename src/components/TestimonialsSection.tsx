@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
 
                 <StaggerReveal staggerDelay={0.1} style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
                     gap: 24,
                 }}>
                     {testimonials.map((t, i) => (

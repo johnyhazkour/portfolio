@@ -232,7 +232,7 @@ export default function ContactSection() {
                     </Reveal>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 52, alignItems: "start" }}>
+                <div className="contact-info-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 52, alignItems: "start" }}>
 
                     {/* ── Left: contact info ─────────── */}
                     <Reveal direction="left" delay={0.2}>
@@ -516,13 +516,19 @@ export default function ContactSection() {
             </div>
 
             <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           #contact > div.container > div:last-child {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
+            gap: 40px !important;
           }
+        }
+        @media (max-width: 768px) {
           #contact form > div:first-child {
             grid-template-columns: 1fr !important;
+            gap: 15px !important;
+          }
+          #contact form {
+            padding: 24px !important;
           }
         }
       `}</style>

@@ -67,9 +67,9 @@ function SEOCard({ service, index }: { service: typeof seoServices[0]; index: nu
     return (
         <div style={{ marginBottom: 40 }}>
             <Reveal direction={isEven ? "left" : "right"}>
-                <div style={{
+                <div className="seo-grid" style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
                     background: "rgba(255,255,255,0.02)",
                     border: "1px solid var(--border)",
                     borderRadius: 24,

@@ -192,11 +192,13 @@ export default function ServicesSection() {
                 />
 
                 {/* Grid */}
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-                    gap: 24,
-                }}>
+                <div
+                    className="services-grid"
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
+                        gap: 24,
+                    }}>
                     {services.map((service, i) => (
                         <ServiceCard key={i} service={service} index={i} />
                     ))}
