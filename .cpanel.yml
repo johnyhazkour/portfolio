@@ -1,9 +1,4 @@
----
 deployment:
   tasks:
     - export DEPLOYPATH=/home/johnyhazkour/public_html
-    # Use standard npm (it's usually in the PATH)
-    - npm install
-    - npm run build
-    # Simpler copy command
-    - cp -R out/* $DEPLOYPATH # Final deployment
+    - /bin/cp -R out/* $DEPLOYPATH
