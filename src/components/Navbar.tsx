@@ -131,13 +131,22 @@ export default function Navbar() {
                                 <span className="underline"></span>
                             </button>
                         ))}
-                        <button
-                            onClick={() => scrollTo("#contact")}
+                        <a
+                            href="https://calendly.com/johnyhazkour/the-mind-crafter"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn-primary"
-                            style={{ padding: "9px 22px", fontSize: "0.85rem", marginLeft: 8 }}
+                            style={{
+                                padding: "9px 22px",
+                                fontSize: "0.85rem",
+                                marginLeft: 8,
+                                display: "inline-flex",
+                                alignItems: "center",
+                                textDecoration: "none"
+                            }}
                         >
-                            <span>Hire Me</span>
-                        </button>
+                            <span>Book a Call</span>
+                        </a>
                     </nav>
 
                     {/* Mobile Toggle */}
@@ -199,14 +208,21 @@ export default function Navbar() {
                                     <span className="mobile-link-text">{link.label}</span>
                                 </motion.button>
                             ))}
-                            <motion.button
+                            <motion.a
                                 variants={linkVariants}
-                                onClick={() => scrollTo("#contact")}
+                                href="https://calendly.com/johnyhazkour/the-mind-crafter"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="btn-primary"
-                                style={{ padding: "18px 48px", marginTop: 30, fontSize: "1.1rem" }}
+                                style={{
+                                    padding: "18px 48px",
+                                    marginTop: 30,
+                                    fontSize: "1.1rem",
+                                    textDecoration: "none"
+                                }}
                             >
-                                Hire Me
-                            </motion.button>
+                                Book a Call
+                            </motion.a>
                         </div>
 
                         {/* Background Ornament for Mobile Menu */}
