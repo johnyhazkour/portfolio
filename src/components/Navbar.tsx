@@ -132,7 +132,7 @@ export default function Navbar() {
                             </button>
                         ))}
                         <a
-                            href="https://calendly.com/johnyhazkour/the-mind-crafter"
+                            href="https://calendly.com/johnyhazkour/book-a-call"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary"
