@@ -22,7 +22,7 @@ export default function Logo({ size = 40, animate = true }: LogoProps) {
             whileHover={animate ? { scale: 1.05 } : {}}
         >
             <Image
-                src="/logo.png?v=1"
+                src="/logo.png?v=2"
                 alt="Logo"
                 width={size}
                 height={size}
