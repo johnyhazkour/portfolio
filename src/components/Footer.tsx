@@ -30,7 +30,7 @@ export default function Footer() {
                     <div className="footer-brand">
                         <Reveal>
                             <div className="footer-logo-wrapper" style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-                                <Logo size={150} animate={false} />
+                                <Logo size={75} animate={false} />
                             </div>
                             <p style={{ color: "var(--text-secondary)", maxWidth: 320, lineHeight: 1.8, fontSize: "0.95rem" }}>
                                 Professional web developer & security expert. Fixing broken websites and building future-proof digital experiences since 2018.
