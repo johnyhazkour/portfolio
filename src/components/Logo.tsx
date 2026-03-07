@@ -7,29 +7,29 @@ interface LogoProps {
     animate?: boolean;
 }
 
-export default function Logo({ size = 40, animate = true }: LogoProps) {
+export default function Logo({ size = 140, animate = true }: LogoProps) {
     return (
         <motion.span
             style={{
-                width: size,
                 height: size,
                 display: "inline-flex",
                 position: "relative",
                 alignItems: "center",
                 justifyContent: "center",
-                overflow: "hidden"
             }}
             whileHover={animate ? { scale: 1.05 } : {}}
         >
             <Image
-                src="/logo.png?v=7"
+                src="/logo.png?v=9"
                 alt="Logo"
-                width={size}
-                height={size}
+                width={800}
+                height={400}
+                priority
                 style={{
                     objectFit: "contain",
-                    width: "100%",
-                    height: "100%"
+                    width: "auto",
+                    height: "100%",
+                    maxWidth: "none"
                 }}
             />
         </motion.span>

@@ -88,7 +88,7 @@ export default function Navbar() {
                 animate={{ y: 0 }}
                 style={{
                     position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-                    padding: scrolled ? "12px 0" : "24px 0",
+                    padding: scrolled ? "4px 0" : "12px 0",
                     background: scrolled ? "rgba(10, 10, 10, 0.92)" : "transparent",
                     backdropFilter: scrolled ? "blur(20px)" : "none",
                     borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
