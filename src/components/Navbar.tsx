@@ -101,7 +101,7 @@ export default function Navbar() {
                         background: "none", border: "none", cursor: "pointer",
                         display: "flex", alignItems: "center", gap: 12
                     }}>
-                        <Logo size={scrolled ? 80 : 110} animate={false} />
+                        <Logo size={scrolled ? 100 : 140} animate={false} />
                     </button>
 
                     {/* Desktop Links */}
