@@ -83,6 +83,7 @@ function WebsiteCard({ site }: { site: typeof websites[0] }) {
                         </div>
                         <div style={{
                             height: 180,
+                            width: "100%",
                             background: `linear-gradient(135deg, ${site.color}05, transparent)`,
                             display: "flex",
                             alignItems: "center",
@@ -91,7 +92,7 @@ function WebsiteCard({ site }: { site: typeof websites[0] }) {
                             overflow: "hidden"
                         }}>
                             <Image
-                                src={site.image}
+                                src={`${site.image}?v=1`}
                                 alt={site.name}
                                 fill
                                 style={{
