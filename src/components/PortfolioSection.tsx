@@ -1,32 +1,33 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SectionHeader, Reveal, StaggerReveal } from "./AnimationUtils";
+import Image from "next/image";
+import { SectionHeader, Reveal } from "./AnimationUtils";
 
 const websites = [
-    { url: "https://totalfenceconcepts.com/", name: "Total Fence Concepts", category: "Business", color: "#ffffff" },
-    { url: "https://larabaakliny.com/", name: "Lara Baakl Iny", category: "Personal", color: "#cccccc" },
-    { url: "https://orcaunion.com", name: "Orca Union", category: "Corporate", color: "#eeeeee" },
-    { url: "https://www.adamsfood-kuwait.com/", name: "Adams Food Kuwait", category: "Food & Delivery", color: "#dddddd" },
-    { url: "https://labelsbyme.com/", name: "Labels By Me", category: "E-Commerce", color: "#aaaaaa" },
-    { url: "https://fiduciary1st.com/", name: "Fiduciary 1st", category: "Finance", color: "#ffffff" },
-    { url: "https://trypocketplan.com/", name: "Pocket Plan", category: "SaaS", color: "#bbbbbb" },
-    { url: "https://vetchat.live/", name: "VetChat Live", category: "Healthcare", color: "#cccccc" },
-    { url: "https://accelerator.pocketplan.io/", name: "Pocket Plan Accelerator", category: "SaaS", color: "#eeeeee" },
-    { url: "https://yachtseagate.com/", name: "Yacht Sea Gate", category: "Luxury", color: "#ffffff" },
-    { url: "https://mirnaelnar.com", name: "Mirna El Nar", category: "Personal", color: "#dddddd" },
-    { url: "https://sorbettilb.com/", name: "Sorbetti LB", category: "Food & Delivery", color: "#aaaaaa" },
-    { url: "https://roomgallery.com/", name: "Room Gallery", category: "Design", color: "#cccccc" },
-    { url: "https://antaakhi.org/", name: "Antaakhi", category: "Non-Profit", color: "#bbbbbb" },
-    { url: "https://octometrix.com/", name: "Octometrix", category: "Tech", color: "#eeeeee" },
-    { url: "https://nakhoulcorp.com/", name: "Nakhoul Corp", category: "Corporate", color: "#ffffff" },
-    { url: "https://healthtechalley.org", name: "Health Tech Alley", category: "Healthcare", color: "#dddddd" },
-    { url: "https://hubrenovationsnyc.com/", name: "Hub Renovations NYC", category: "Construction", color: "#cccccc" },
-    { url: "https://www.eyenetlb.com/", name: "Eyenet LB", category: "Optical", color: "#ffffff" },
-    { url: "https://propertyprosuite.com/", name: "Property Pro Suite", category: "Real Estate", color: "#bbbbbb" },
-    { url: "https://emplus.me/", name: "EM Plus", category: "Personal", color: "#eeeeee" },
-    { url: "https://zawajio.com/", name: "Zawajio", category: "Social", color: "#aaaaaa" },
-    { url: "https://pocketplan.io/", name: "Pocketplan.io", category: "SaaS", color: "#ffffff" },
+    { url: "https://totalfenceconcepts.com/", name: "Total Fence Concepts", category: "Business", color: "#ffffff", image: "/portfolio/images/totalfence.png" },
+    { url: "https://larabaakliny.com/", name: "Lara Baakl Iny", category: "Personal", color: "#cccccc", image: "/portfolio/images/larabaakl.png" },
+    { url: "https://orcaunion.com", name: "Orca Union", category: "Corporate", color: "#eeeeee", image: "/portfolio/images/orca.png" },
+    { url: "https://www.adamsfood-kuwait.com/", name: "Adams Food Kuwait", category: "Food & Delivery", color: "#dddddd", image: "/portfolio/images/adamsfood.png" },
+    { url: "https://labelsbyme.com/", name: "Labels By Me", category: "E-Commerce", color: "#aaaaaa", image: "/portfolio/images/labels.png" },
+    { url: "https://fiduciary1st.com/", name: "Fiduciary 1st", category: "Finance", color: "#ffffff", image: "/portfolio/images/fiduciary.png" },
+    { url: "https://trypocketplan.com/", name: "Pocket Plan", category: "SaaS", color: "#bbbbbb", image: "/portfolio/images/pocketplan.png" },
+    { url: "https://vetchat.live/", name: "VetChat Live", category: "Healthcare", color: "#cccccc", image: "/portfolio/images/vetchat.png" },
+    { url: "https://accelerator.pocketplan.io/", name: "Pocket Plan Accelerator", category: "SaaS", color: "#eeeeee", image: "/portfolio/images/accelerator.png" },
+    { url: "https://yachtseagate.com/", name: "Yacht Sea Gate", category: "Luxury", color: "#ffffff", image: "/portfolio/images/yacht.png" },
+    { url: "https://mirnaelnar.com", name: "Mirna El Nar", category: "Personal", color: "#dddddd", image: "/portfolio/images/mirna.png" },
+    { url: "https://sorbettilb.com/", name: "Sorbetti LB", category: "Food & Delivery", color: "#aaaaaa", image: "/portfolio/images/sorbetti.png" },
+    { url: "https://roomgallery.com/", name: "Room Gallery", category: "Design", color: "#cccccc", image: "/portfolio/images/roomgallery.png" },
+    { url: "https://antaakhi.org/", name: "Antaakhi", category: "Non-Profit", color: "#bbbbbb", image: "/portfolio/images/antaakhi.png" },
+    { url: "https://octometrix.com/", name: "Octometrix", category: "Tech", color: "#eeeeee", image: "/portfolio/images/octometrix.png" },
+    { url: "https://nakhoulcorp.com/", name: "Nakhoul Corp", category: "Corporate", color: "#ffffff", image: "/portfolio/images/nakhoul.png" },
+    { url: "https://healthtechalley.org", name: "Health Tech Alley", category: "Healthcare", color: "#dddddd", image: "/portfolio/images/healthtech.png" },
+    { url: "https://hubrenovationsnyc.com/", name: "Hub Renovations NYC", category: "Construction", color: "#cccccc", image: "/portfolio/images/hubNYC.png" },
+    { url: "https://www.eyenetlb.com/", name: "Eyenet LB", category: "Optical", color: "#ffffff", image: "/portfolio/images/eyenet.png" },
+    { url: "https://propertyprosuite.com/", name: "Property Pro Suite", category: "Real Estate", color: "#bbbbbb", image: "/portfolio/images/propertypro.png" },
+    { url: "https://emplus.me/", name: "EM Plus", category: "Personal", color: "#eeeeee", image: "/portfolio/images/emplus.png" },
+    { url: "https://zawajio.com/", name: "Zawajio", category: "Social", color: "#aaaaaa", image: "/portfolio/images/zawajio.png" },
+    { url: "https://pocketplan.io/", name: "Pocketplan.io", category: "SaaS", color: "#ffffff", image: "/portfolio/images/pocketio.png" },
 ];
 
 const categories = ["All", "SaaS", "E-Commerce", "Business", "Healthcare", "Corporate"];
@@ -81,19 +82,26 @@ function WebsiteCard({ site }: { site: typeof websites[0] }) {
                             </div>
                         </div>
                         <div style={{
-                            height: 140,
+                            height: 180,
                             background: `linear-gradient(135deg, ${site.color}05, transparent)`,
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             position: "relative",
+                            overflow: "hidden"
                         }}>
-                            <motion.div
-                                animate={{ scale: hovered ? 1.15 : 1, opacity: hovered ? 1 : 0.4 }}
-                                style={{ fontSize: "3rem" }}
-                            >
-                                🌐
-                            </motion.div>
+                            <Image
+                                src={site.image}
+                                alt={site.name}
+                                fill
+                                style={{
+                                    objectFit: "cover",
+                                    transition: "transform 0.5s ease",
+                                    transform: hovered ? "scale(1.1)" : "scale(1)",
+                                    opacity: 0.8
+                                }}
+                            />
+
                             {/* Animated scan line on hover */}
                             {hovered && (
                                 <motion.div
@@ -162,7 +170,7 @@ export default function PortfolioSection() {
                             className="btn-secondary"
                             style={{
                                 padding: "8px 22px", borderRadius: 100, fontSize: "0.85rem",
-                                background: activeCat === cat ? "rgba(0,212,255,0.1)" : "transparent",
+                                background: activeCat === cat ? "rgba(255,255,255,0.1)" : "transparent",
                                 borderColor: activeCat === cat ? "var(--accent-cyan)" : "var(--border)",
                                 color: activeCat === cat ? "var(--accent-cyan)" : "var(--text-secondary)",
                             }}
