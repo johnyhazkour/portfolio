@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     description: "Expert web development, security recovery, and cutting-edge SEO services.",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export const viewport = {
