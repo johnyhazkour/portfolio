@@ -101,16 +101,7 @@ export default function Navbar() {
                         background: "none", border: "none", cursor: "pointer",
                         display: "flex", alignItems: "center", gap: 12
                     }}>
-                        <Logo size={scrolled ? 30 : 34} animate={false} />
-                        <span style={{
-                            fontSize: scrolled ? "1rem" : "1.1rem",
-                            fontWeight: 800,
-                            letterSpacing: "-0.02em",
-                            transition: "all 0.3s ease",
-                            color: "white"
-                        }}>
-                            Johny<span className="gradient-text"> Dev</span>
-                        </span>
+                        <Logo size={scrolled ? 50 : 60} animate={false} />
                     </button>
 
                     {/* Desktop Links */}
