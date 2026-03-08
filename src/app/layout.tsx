@@ -37,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="facebook-domain-verification" content="pfsnc86p8gjedi2a2zjfsf1b5e508v" />
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
